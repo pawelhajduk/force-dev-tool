@@ -27,6 +27,10 @@ var profileWithoutFieldPermission = [TestProfile.header, TestProfile.footer].joi
 var profileWithFieldPermission = [TestProfile.header, TestProfile.fieldPermissions.fieldPermission1, TestProfile.footer].join("\n");
 var profileWithFieldPermissionModified = [TestProfile.header, TestProfile.fieldPermissions.fieldPermission1Modified, TestProfile.footer].join("\n");
 
+var unindent = function(text) {
+	return text.replace(/^ {4}/mg, "").replace("\n$", "");
+};
+
 describe('MetadataFileContainer', function() {
 	describe('#MetadataFileContainer()', function() {
 		it('should parse a filepath', function() {
@@ -45,7 +49,7 @@ describe('MetadataFileContainer', function() {
 			assert.deepEqual(mfc.components.length, 1);
 			assert.deepEqual(
 				mfc.components[0].contents,
-				TestObject.fields.textField1
+				unindent(TestObject.fields.textField1)
 			);
 		});
 		it('should return the ProfileApexClassAccess of a metadata file', function() {
@@ -56,7 +60,7 @@ describe('MetadataFileContainer', function() {
 			assert.deepEqual(mfc.components.length, 1);
 			assert.deepEqual(
 				mfc.components[0].contents,
-				TestProfile.classAccesses.classAccess1
+				unindent(TestProfile.classAccesses.classAccess1)
 			);
 		});
 		it('should return the ProfileFieldLevelSecurity of a metadata file', function() {
@@ -67,7 +71,7 @@ describe('MetadataFileContainer', function() {
 			assert.deepEqual(mfc.components.length, 1);
 			assert.deepEqual(
 				mfc.components[0].contents,
-				TestProfile.fieldPermissions.fieldPermission1
+				unindent(TestProfile.fieldPermissions.fieldPermission1)
 			);
 		});
 	});

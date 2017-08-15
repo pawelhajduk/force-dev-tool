@@ -15,6 +15,7 @@
     "fs-extra": "^5.0.0",
     "glob": "^7.0.6",
     "jsforce": "^1.7.0",
+    "metadata-lib": "^0.1.0",
     "mississippi": "^1.3.0",
     "mkdirp": "^0.5.1",
     "multimatch": "^2.1.0",
@@ -25,8 +26,6 @@
     "underscore": "^1.8.3",
     "vinyl": "^1.2.0",
     "vinyl-fs": "^2.4.3",
-    "xml2js": "^0.4.19",
-    "xmldoc": "^1.1.0",
     "yauzl": "^2.9.1",
     "yazl": "^2.4.3"
   },
