@@ -1,5 +1,8 @@
 # CHANGELOG
 
+## 1.1.2
+Added
+ * implement option to ignore medatata listed in `.forceignore` while creating a changeset by adding the `--exclude-ignored` option
 ## 1.1.1
 Fixed
  * changeset: handle recordType in layoutAssignments of Profile @leboff (#126)
